@@ -403,7 +403,7 @@ export default class Carousel extends Component {
     if (this.getProp('infinite')) {
       const clonesLeft = times(numberOfClonesLeft, () => children);
       const clonesRight = times(numberOfClonesRight, () => children);
-      slides = [...clonesLeft, children, ...clonesRight];
+      slides = [].concat(...clonesLeft, children, ...clonesRight);
     }
 
     return (
